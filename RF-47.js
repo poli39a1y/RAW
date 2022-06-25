@@ -9,7 +9,7 @@ setTitle('RF-47 ATTACKER ULTIMATE');
 const prompt = require("prompt-sync")();
 console.log("RF-47 ATTACKER ULTIMATE")
 const pass = prompt(`RF-47 ULTIMATE Accses ( Password )> `.red)
-request('https://server.idproject.xyz/rf-47.txt', function (error, response, body) {
+request('https://investasean.asean.org/files/file/4.txt', function (error, response, body) {
   if (body === pass) {
   }
   else {
